@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
 
 use Carbon\Carbon;
 
-$province = isset($_GET['province']) ? $_GET['province'] : '安徽省';
+$province = isset($_GET['provincial']) ? $_GET['provincial'] : '安徽省';
 $province = urlencode($province);
 $url = "http://lab.isaaclin.cn/nCoV/api/area?latest=0&province={$province}";
 $historical_data = file_get_contents($url);
@@ -15,6 +15,11 @@ foreach ($results as $result) {
 }
 $legend_data = array_values(array_unique(call_user_func_array('array_merge', $all_cities + [[]])));
 $city = [];
+$results = array_reverse($results);
+foreach ($results as $result) {
+    $temp_results[date('Ymd', $result['updateTime'] / 1000)] = $result;
+}
+$results = array_reverse($temp_results);
 foreach ($results as $result) {
     $temp_citys = array_column($result['cities'], 'cityName');
     $temp_confirmed_count = array_combine(array_column($result['cities'], 'cityName'), array_column($result['cities'], 'confirmedCount'));
@@ -36,7 +41,7 @@ foreach ($legend_data as $city) {
 }
 
 $func = function ($value) {
-    return Carbon::createFromTimestamp($value/1000)->toDateTimeString();
+    return Carbon::createFromTimestamp($value / 1000)->toDateTimeString();
 };
 $date = array_map($func, array_column($results, 'updateTime'));
 $reposion = [
