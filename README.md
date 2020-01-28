@@ -21,6 +21,6 @@ npm run build
 浏览器打开项目中 index.html
 
 示例：
-![湖北省](./img/湖北省.png)
-![安徽省](./img/安徽省.png)
-![河南省](./img/河南省.png)
+![湖北省.png](https://i.loli.net/2020/01/28/Uw5lGByJPEn6FS4.png)
+![安徽省.png](https://i.loli.net/2020/01/28/fJ7KT2BRSxWapZg.png)
+![河南省.png](https://i.loli.net/2020/01/28/pQ8NvFB7cMu6qA3.png)
