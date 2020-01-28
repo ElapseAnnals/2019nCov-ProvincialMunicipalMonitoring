@@ -1,9 +1,5 @@
 <?php
 
-require 'vendor/autoload.php';
-
-use Carbon\Carbon;
-
 $province = isset($_GET['provincial']) ? $_GET['provincial'] : '安徽省';
 $province = urlencode($province);
 $url = "http://lab.isaaclin.cn/nCoV/api/area?latest=0&province={$province}";
@@ -41,7 +37,7 @@ foreach ($legend_data as $city) {
 }
 
 $func = function ($value) {
-    return Carbon::createFromTimestamp($value / 1000)->toDateTimeString();
+    return date('Ymd', $value / 1000);
 };
 $date = array_map($func, array_column($results, 'updateTime'));
 $reposion = [
