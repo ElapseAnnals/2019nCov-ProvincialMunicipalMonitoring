@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "axios": "^0.19.2",
+    "echarts": "^4.6.0",
+    "locutus": "^2.0.11"
+  },
+  "name": "2019ncov-provincialmunicipalmonitoring",
+  "description": "省市级别展示",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "scripts": {
+    "test": "npm test",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElapseAnnals/2019nCov-ProvincialMunicipalMonitoring.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElapseAnnals/2019nCov-ProvincialMunicipalMonitoring/issues"
+  },
+  "homepage": "https://github.com/ElapseAnnals/2019nCov-ProvincialMunicipalMonitoring#readme"
+}
